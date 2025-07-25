@@ -29,7 +29,6 @@
                 <p class="text-lg mb-2"><strong>Email:</strong> {{ $intern->email }}</p>
                 <p class="text-lg mb-2"><strong>Nomor Telepon:</strong> {{ $intern->phone_number ?? '-' }}</p>
                 <p class="text-lg mb-2"><strong>Batch Magang:</strong> {{ $intern->batch ?? '-' }}</p>
-                <p class="text-lg mb-2"><strong>Tanggal Bergabung:</strong> {{ $intern->joining_date }}</p>
                 <p class="text-lg mb-2"><strong>Mentor:</strong> {{ $intern->mentor->full_name ?? 'Belum Ditentukan' }}</p>
             </div>
         @else
@@ -46,18 +45,6 @@
                     class="block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
                     Catat Presensi
                 </a>
-                <a href="{{ route('intern.payroll') }}"
-                    class="block bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                    Lihat Gaji
-                </a>
-                <a href="{{ route('intern.profile.show') }}"
-                    class="block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                    Lihat Profil
-                </a>
-                <a href="{{ route('intern.assessments.index') }}"
-                    class="block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                    Lihat Penilaian
-                </a>
                 <a href="{{ route('general.program_info.index') }}"
                     class="block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
                     Informasi Program
@@ -66,8 +53,21 @@
                     class="block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
                     Kalender Program
                 </a>
+                <a href="{{ route('intern.payroll') }}"
+                    class="block bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                    Lihat Gaji
+                </a>
+                <a href="{{ route('intern.assessments.index') }}"
+                    class="block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                    Lihat Penilaian
+                </a>
+                <a href="{{ route('intern.profile.show') }}"
+                    class="block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                    Lihat Profil
+                </a>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

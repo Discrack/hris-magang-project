@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\InternDashboardController;
+use App\Http\Controllers\InternDashboardController; // Pastikan ini diimpor
 use App\Http\Controllers\MentorDashboardController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\InternProfileController;
 use App\Http\Controllers\ProgramInfoController;
 use App\Http\Controllers\CalendarController;
-use App\Http\Controllers\AssessmentController; // Import Controller baru
+use App\Http\Controllers\AssessmentController;
 use App\Models\User;
 
 /*
@@ -74,7 +74,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Manajemen Profil Peserta Magang Admin
         Route::prefix('admin/interns')->name('admin.interns.')->group(function () {
-            Route::get('/', [InternProfileController::class, 'index'])->name('index');
+            Route::get('/', [InternProfileController::class, 'index'])->name('index'); // Ini adalah rute admin.interns.index
             Route::get('/create', [InternProfileController::class, 'create'])->name('create');
             Route::post('/', [InternProfileController::class, 'store'])->name('store');
             Route::get('/{internId}/edit', [InternProfileController::class, 'edit'])->name('edit');
@@ -113,6 +113,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Rute Dashboard & Fitur Intern
     Route::middleware(['role:intern'])->group(function () {
+        // Ini adalah rute untuk dashboard intern
         Route::get('/intern/dashboard', [InternDashboardController::class, 'index'])->name('intern.dashboard');
 
         // Presensi Intern

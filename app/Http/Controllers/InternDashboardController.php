@@ -20,8 +20,14 @@ class InternDashboardController extends Controller
      */
     public function index()
     {
-        $interns = Intern::with('user', 'mentor')->orderBy('full_name')->get();
-        return view('admin.interns.index', compact('interns'));
+        $user = Auth::user();
+        // Dapatkan data peserta magang yang terkait dengan user ini
+        // Gunakan with() untuk eager loading relasi 'intern' dari User
+        // Ini memastikan $user->intern terisi jika ada
+        $intern = Intern::where('user_id', $user->user_id)->first();
+
+        // PASTIKAN INI MERENDER VIEW YANG BENAR
+        return view('intern.dashboard', compact('user', 'intern'));
     }
 
     /**
