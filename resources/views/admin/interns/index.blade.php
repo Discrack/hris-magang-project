@@ -65,7 +65,7 @@
                                 <th class="py-3 px-6 text-left">Username</th>
                                 <th class="py-3 px-6 text-left">Email</th>
                                 <th class="py-3 px-6 text-left">Batch</th>
-                                {{-- <th class="py-3 px-6 text-left">Asal Kampus</th> --}} {{-- Hapus baris ini --}}
+                                {{-- <th class="py-3 px-6 text-left">Asal Kampus</th> --}}
                                 <th class="py-3 px-6 text-left">Mentor</th>
                                 <th class="py-3 px-6 text-center">Aksi</th>
                             </tr>
@@ -78,7 +78,6 @@
                                     <td class="py-3 px-6 text-left">{{ $intern->email }}</td>
                                     <td class="py-3 px-6 text-left">{{ $intern->batch ?? '-' }}</td>
                                     {{-- <td class="py-3 px-6 text-left">{{ $intern->asal_kampus ?? '-' }}</td> --}}
-                                    {{-- Hapus baris ini --}}
                                     <td class="py-3 px-6 text-left">{{ $intern->mentor->full_name ?? 'Belum Ditentukan' }}</td>
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center space-x-2">

@@ -9,6 +9,7 @@ use App\Models\Mentor;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class InternProfileController extends Controller
 {
@@ -50,7 +51,7 @@ class InternProfileController extends Controller
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'phone_number' => 'nullable|string|max:20',
             'batch' => 'nullable|string|max:50',
-            'asal_kampus' => 'nullable|string|max:100', // Tambahkan validasi ini
+            // 'asal_kampus' => 'nullable|string|max:100', // Baris ini dihapus
             'mentor_id' => 'nullable|exists:mentors,mentor_id',
             'joining_date' => 'required|date',
             'termination_date' => 'nullable|date|after_or_equal:joining_date',
@@ -76,7 +77,7 @@ class InternProfileController extends Controller
             'profile_picture' => $profilePictureName,
             'phone_number' => $request->phone_number,
             'batch' => $request->batch,
-            'asal_kampus' => $request->asal_kampus, // Simpan data ini
+            // 'asal_kampus' => $request->asal_kampus, // Baris ini dihapus
             'mentor_id' => $request->mentor_id,
             'joining_date' => $request->joining_date,
             'termination_date' => $request->termination_date,
@@ -128,7 +129,7 @@ class InternProfileController extends Controller
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'phone_number' => 'nullable|string|max:20',
             'batch' => 'nullable|string|max:50',
-            'asal_kampus' => 'nullable|string|max:100', // Tambahkan validasi ini
+            // 'asal_kampus' => 'nullable|string|max:100', // Baris ini dihapus
             'mentor_id' => 'nullable|exists:mentors,mentor_id',
             'joining_date' => 'required|date',
             'termination_date' => 'nullable|date|after_or_equal:joining_date',
@@ -161,7 +162,7 @@ class InternProfileController extends Controller
             'profile_picture' => $profilePictureName,
             'phone_number' => $request->phone_number,
             'batch' => $request->batch,
-            'asal_kampus' => $request->asal_kampus, // Perbarui data ini
+            // 'asal_kampus' => $request->asal_kampus, // Baris ini dihapus
             'mentor_id' => $request->mentor_id,
             'joining_date' => $request->joining_date,
             'termination_date' => $request->termination_date,
@@ -250,7 +251,7 @@ class InternProfileController extends Controller
             ],
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'phone_number' => 'nullable|string|max:20',
-            'asal_kampus' => 'nullable|string|max:100', // Tambahkan validasi ini
+            // 'asal_kampus' => 'nullable|string|max:100', // Baris ini dihapus
             'password' => 'nullable|string|min:8|confirmed',
         ]);
 
@@ -279,7 +280,7 @@ class InternProfileController extends Controller
             'email' => $request->email,
             'profile_picture' => $profilePictureName,
             'phone_number' => $request->phone_number,
-            'asal_kampus' => $request->asal_kampus, // Perbarui data ini
+            // 'asal_kampus' => null, // Baris ini dihapus
         ]);
 
         return redirect()->route('intern.profile.show')->with('success', 'Profil Anda berhasil diperbarui!');

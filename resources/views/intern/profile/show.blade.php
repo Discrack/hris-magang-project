@@ -64,7 +64,6 @@
                 <p class="text-lg mb-2"><strong>Nomor Telepon:</strong> {{ $intern->phone_number ?? '-' }}</p>
                 <p class="text-lg mb-2"><strong>Batch Magang:</strong> {{ $intern->batch ?? '-' }}</p>
                 {{-- <p class="text-lg mb-2"><strong>Asal Kampus:</strong> {{ $intern->asal_kampus ?? '-' }}</p> --}}
-                {{-- Hapus baris ini --}}
                 <p class="text-lg mb-2"><strong>Mentor Pembimbing:</strong>
                     {{ $intern->mentor->full_name ?? 'Belum Ditentukan' }}</p>
                 <p class="text-lg mb-2"><strong>Tanggal Bergabung:</strong>

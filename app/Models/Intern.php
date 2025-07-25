@@ -22,7 +22,7 @@ class Intern extends Model
         'profile_picture',
         'phone_number',
         'batch',
-        // 'asal_kampus', // Hapus baris ini
+        // 'asal_kampus', // Baris ini dihapus
         'mentor_id',
         'joining_date',
         'termination_date',
